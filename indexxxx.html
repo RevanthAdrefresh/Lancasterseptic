@@ -1,0 +1,235 @@
+<!-- <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lancaster Septic Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* GLOBAL */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:"Open Sans", Arial, sans-serif; color:#333; line-height:1.6; }
+    a { color: inherit; text-decoration: none; }
+    img { display:block; max-width:100%; height:auto; }
+
+    /* Top Bar */
+    .top-bar {
+      background:#6aa84f; color:#fff; padding:8px 10%; display:flex; justify-content:space-between; align-items:center; font-size:0.95rem;
+    }
+    .top-bar a { color:#fff; margin-left:14px; }
+
+    /* NAV */
+    .navbar {
+      background:#fff; padding:14px 10%; display:flex; justify-content:space-between; align-items:center; box-shadow:0 2px 5px rgba(0,0,0,0.08);
+    }
+    .logo { font-weight:700; color:#004b23; font-size:1.6rem; letter-spacing:1px; }
+    .nav-links a { margin-left:26px; font-weight:600; color:#333; transition:color .2s; }
+    .nav-links a:hover { color:#6aa84f; }
+
+    /* HERO */
+    header {
+      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url('https://lancaster-septic.websitepro.hosting/wp-content/uploads/2021/11/image2-scaled.jpeg') center center / cover no-repeat;
+      height:90vh; display:flex; align-items:center; justify-content:space-between; padding:0 10%; color:#fff;
+    }
+    .hero-content { max-width:600px; }
+    header h1 { font-size:3rem; font-weight:700; margin-bottom:8px; }
+    header p { font-size:1.05rem; margin-top:8px; }
+    .offer { margin-top:14px; font-weight:700; font-size:1.15rem; color:#fff; }
+
+    /* Quote Form (transparent, larger) */
+    .quote-form { width:520px; padding:28px; color:#000000; border:none; }
+    .quote-form form { display:flex; flex-direction:column; gap:14px; }
+    .form-row { display:flex; gap:14px; }
+    .quote-form input, .quote-form textarea {
+      width:100%; padding:14px; background:white; border:1px solid rgba(255,255,255,0.25); color:#000000; font-size:1rem;
+    }
+    .quote-form input::placeholder, .quote-form textarea::placeholder { color:rgba(0, 0, 0, 0.7); }
+    .quote-form textarea { min-height:110px; resize:vertical; }
+    .quote-form .form-button { display:flex; justify-content:flex-end; }
+    .quote-form button {
+      background:#6aa84f; color:#fff; border:none; padding:12px 32px; font-weight:700; cursor:pointer; font-size:1rem;
+    }
+
+    /* Generic section spacing */
+    section { padding:70px 10%; }
+
+    /* About & Specialists - larger images, no border-radius */
+    .about, .specialists { display:flex; gap:60px; align-items:center; flex-wrap:wrap; }
+    .about img, .specialists img { width:520px; height:auto; object-fit:cover; }
+    .about-text, .specialists-text { flex:1; }
+
+    /* Testimonials with background image */
+    .testimonial-section {
+      background: url('https://lancaster-septic.websitepro.hosting/wp-content/uploads/2020/08/scaled_bg.jpeg') center/cover no-repeat;
+      position:relative; padding:100px 10%; color:#fff; text-align:center;
+    }
+    .testimonial-section::before { content:""; position:absolute; inset:0; background:rgba(0,0,0,0.55); }
+    .testimonial-section h2, .testimonial-section p { position:relative; z-index:1; }
+    .testimonial-section h2 { font-size:2rem; margin-bottom:20px; }
+    .testimonial-section p { font-size:1.15rem; font-style:italic; line-height:1.8; }
+
+    /* Services (clean white) */
+    .services-footer { background:#f8f8f8; color:#333; text-align:center; padding:90px 10%; }
+    .services-footer h2 { color:#004b23; font-size:2.2rem; margin-bottom:34px; font-weight:700; }
+    .footer-columns { display:flex; gap:80px; justify-content:center; flex-wrap:wrap; text-align:left; }
+    .footer-column h3 { color:#004b23; margin-bottom:12px; font-size:1.25rem; font-weight:700; }
+    .footer-column ul { list-style:none; padding:0; }
+    .footer-column li { margin-bottom:10px; color:#333; }
+
+    /* Contact hero (title on image) */
+    .contact-hero {
+      background: url('https://lancaster-septic.websitepro.hosting/wp-content/uploads/2020/08/cherryblossom-scaled-1.jpg') center/cover no-repeat;
+      position:relative; padding:120px 10%; color:#fff; text-align:left;
+    }
+    .contact-hero::before { content:""; position:absolute; inset:0; background:rgba(0,0,0,0.55); }
+    .contact-hero h2 { position:relative; z-index:1; font-size:2.6rem; font-weight:700; }
+
+    /* Get In Touch (white block under image) */
+    .get-in-touch { background:#fff; padding:60px 10%; text-align:left; color:#333; }
+    .get-in-touch h3 { font-size:1.8rem; color:#004b23; margin-bottom:22px; font-weight:700; }
+    .get-in-touch a { display:block; margin-bottom:12px; color:#6aa84f; font-weight:600; }
+    .get-in-touch p { margin-bottom:12px; color:#333; }
+
+    /* Footer */
+    footer { background:#004b23; color:#fff; padding:25px 10%; text-align:center; font-size:0.95rem; }
+
+    /* No rounded corners anywhere (explicit) */
+    * { border-radius:0 !important; }
+
+    /* Responsive */
+    @media (max-width:900px) {
+      header { flex-direction:column; padding:60px 5%; height:auto; text-align:center; }
+      .quote-form { width:100%; order:2; margin-top:20px; }
+      .hero-content { order:1; }
+      .about img, .specialists img { width:100%; }
+      .footer-columns { gap:30px; text-align:center; }
+      .contact-hero h2 { text-align:center; }
+      .get-in-touch { text-align:center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top bar -->
+  <div class="top-bar">
+    <div>📞 978-368-8022 &nbsp; | &nbsp; ✉️ lancasterseptic@yahoo.com</div>
+    <div>
+      <a href="#">Facebook</a>
+      <a href="reviews.html">Reviews</a>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">LANCASTER SEPTIC</div>
+    <div class="nav-links">
+      <a href="index.html">HOME</a>
+      <a href="#about">ABOUT</a>
+      <a href="#specialists">SERVICES</a>
+      <a href="reviews.html">REVIEWS</a>
+      <a href="#contact">CONTACT</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <header>
+    <div class="hero-content">
+      <h1>Septic & Excavation Services</h1>
+      <p>Call <strong>978-368-8022</strong> to schedule a septic service, system consultation, or excavation project.</p>
+      <p class="offer">$15 Off for New Customers</p>
+    </div>
+
+    <div class="quote-form">
+      <form>
+        <div class="form-row">
+          <input type="text" placeholder="*Name" required>
+          <input type="text" placeholder="*Phone" required>
+        </div>
+        <div class="form-row">
+          <input type="email" placeholder="Email Address" required>
+          <input type="text" placeholder="I am Interested In" required>
+        </div>
+        <textarea placeholder="Message (Please include your address if you'd like me to stop by)"></textarea>
+        <div class="form-button">
+          <button type="submit">Send</button>
+        </div>
+      </form>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <img src="https://lancaster-septic.websitepro.hosting/wp-content/uploads/2020/06/unnamed-9.jpg" alt="Septic Truck">
+    <div class="about-text">
+      <h2>About Us</h2>
+      <p>Lancaster Septic is locally owned and operated by professionals serving the community for over 5 years. Our team offers great customer service and fair pricing with highly trained staff. We handle residential, commercial, and municipal septic services across the region.</p>
+    </div>
+  </section>
+
+  <!-- Specialists -->
+  <section class="specialists" id="specialists">
+    <img src="https://lancaster-septic.websitepro.hosting/wp-content/uploads/2020/07/spectic-14.jpg" alt="Excavation">
+    <div class="specialists-text">
+      <h2>Septic Service Specialists</h2>
+      <p>We specialize in septic system installation, excavation, demolition, maintenance, and landscaping around septic areas. Serving Lancaster and surrounding towns.</p>
+    </div>
+  </section>
+
+  <!-- Testimonials (image background) -->
+  <section class="testimonial-section">
+    <h2>Customer Testimonials</h2>
+    <p>“Did a thorough job and recommended some things that no one had mentioned before. It’s a small operation, but good nonetheless.”<br><br><strong>– Paul Mitchell</strong></p>
+  </section>
+
+  <!-- Services -->
+  <section class="services-footer">
+    <h2>Our Services</h2>
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h3>Septic Services / Systems</h3>
+        <ul>
+          <li>New Septic System Installation</li>
+          <li>Site Evaluation</li>
+          <li>Holding Tank Install</li>
+          <li>Leaching Field Installation</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Excavation Services</h3>
+        <ul>
+          <li>Trucking</li>
+          <li>Stump Removal</li>
+          <li>Sewer Connections</li>
+          <li>Water Line Repairs</li>
+          <li>Demo / Snow Removal</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact hero (title on image) -->
+  <section class="contact-hero" id="contact">
+    <h2>Contact Us</h2>
+  </section>
+
+  <!-- Get in touch block (below image) -->
+  <section class="get-in-touch">
+    <h3>Get In Touch</h3>
+    <a href="tel:9783688022">+1 978-368-8022</a>
+    <a href="mailto:lancasterseptic@yahoo.com">lancasterseptic@yahoo.com</a>
+    <p>290 Neck Rd, Lancaster, MA 01523, US</p>
+    <div class="social-icons">
+      <a href="#" aria-label="facebook">F</a>
+      <a href="#" aria-label="google">G</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Lancaster Septic Services. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html> -->
+ -->
