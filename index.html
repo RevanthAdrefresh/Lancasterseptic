@@ -20,21 +20,42 @@
     .top-bar a { color:#fff; }
 
     /* NAV */
-    .navbar {
-      background:#fff; padding:14px 10%; display:flex; justify-content:space-between; align-items:center; box-shadow:0 2px 5px rgba(0,0,0,0.08);
-    }
+   .navbar {
+  background:#fff;
+  padding:14px 10%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 2px 5px rgba(0,0,0,0.08);
+
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.85);
+
+
+}
+
     .logo { font-weight:700; color:#004b23; font-size:1.6rem; letter-spacing:1px; }
     .nav-links a { margin-left:26px; font-weight:600; color:#333; transition:color .2s; }
     .nav-links a:hover { color:#6aa84f; }
 
-    /* HERO */
+    /* HERO (structure unchanged; only the background image URL is replaced) */
     header {
-      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-        url('https://lancaster-septic.websitepro.hosting/wp-content/uploads/2021/11/image2-scaled.jpeg') center center / cover no-repeat;
+  background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+
+        url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2000&q=80') center center / cover no-repeat;
       height:90vh; display:flex; align-items:center; justify-content:space-between; padding:0 10%; color:#fff;
     }
-    .hero-content { max-width:600px; }
-    header h1 { font-size:3rem; font-weight:700; margin-bottom:8px; }
+   .hero-content {
+  max-width:600px;
+  margin-top:-40px;
+}
+
+    header h1 { font-size:3rem; font-weight:700; margin-bottom:0px; }
     header p { font-size:1.05rem; margin-top:8px; }
     .offer { margin-top:14px; font-weight:700; font-size:1.15rem; color:#fff; }
 
@@ -43,7 +64,7 @@
     .quote-form form { display:flex; flex-direction:column; gap:14px; }
     .form-row { display:flex; gap:20px; }
     .quote-form input, .quote-form textarea {
-      width:100%; padding:14px; ; border:1px solid rgba(255,255,255,0.25); color:#000000; font-size:1rem;
+      width:100%; padding:14px; border:1px solid rgba(255,255,255,0.25); color:#000000; font-size:1rem;
     }
     .quote-form input::placeholder, .quote-form textarea::placeholder { color:rgba(0, 0, 0, 0.7); }
     .quote-form textarea { min-height:110px; resize:vertical; }
@@ -62,7 +83,7 @@
 
     /* Testimonials with background image */
     .testimonial-section {
-      background: url('https://lancaster-septic.websitepro.hosting/wp-content/uploads/2020/08/scaled_bg.jpeg') center/cover no-repeat;
+      background: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
       position:relative; padding:100px 10%; color:#fff; text-align:center;
     }
     .testimonial-section::before { content:""; position:absolute; inset:0; background:rgba(0,0,0,0.55); }
@@ -92,23 +113,96 @@
 
     /* Contact hero (title on image) */
     .contact-hero {
-      background: url('https://lancaster-septic.websitepro.hosting/wp-content/uploads/2020/08/cherryblossom-scaled-1.jpg') center/cover no-repeat;
+      background: url('https://images.unsplash.com/photo-1551836022-4c4c79ecde51?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
       position:relative; padding:120px 10%; color:#fff; text-align:left;
     }
     .contact-hero::before { content:""; position:absolute; inset:0; background:rgba(0,0,0,0.55); }
     .contact-hero h2 { position:relative; z-index:1; font-size:2.6rem; font-weight:700; }
 
     /* Get In Touch (white block under image) */
-    .get-in-touch { background:#fff; padding:60px 10%; text-align:left; color:#333; }
+        .get-in-touch { background:#fff; padding:60px 10%; text-align:left; color:#333; display: flex; justify-content: space-around; }
+
     .get-in-touch h3 { font-size:1.8rem; color:#004b23; margin-bottom:22px; font-weight:700; }
     .get-in-touch a { display:block; margin-bottom:12px; color:#6aa84f; font-weight:600; }
     .get-in-touch p { margin-bottom:12px; color:#333; }
+.get-in-touch h3 {
+  font-size:2rem;
+  margin-bottom:20px;
+  color:#000;
+}
+
+.get-in-touch a {
+  font-size:1.2rem;
+  color:#66a24f;   /* green like screenshot */
+  font-weight:600;
+  display:block;
+  margin-bottom:10px;
+}
+
+.get-in-touch p {
+  font-size:1.1rem;
+  color:#333;
+  margin-top:10px;
+}
+
+.social-icons {
+  display:flex;
+  gap:20px;
+  font-size:2rem;
+}
+
+.social-icons a {
+  color:#66a24f;    /* same green */
+  font-weight:bold;
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.social-icons a {
+  width: 45px;
+  height: 45px;
+  background: #6aa84f;       /* green background */
+  color: #fff;               /* white icon text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+  border: 2px solid #6aa84f; /* smooth border */
+    border-radius: 100%;        /* round circle */
+
+}
+
+/* Hover effect */
+.social-icons a:hover {
+  background: transparent;
+  color: #6aa84f;
+  border-color: #6aa84f;
+  transform: scale(1.05);
+}
 
     /* Footer */
-    footer { background:#004b23; color:#fff; padding:25px 10%; text-align:center; font-size:0.95rem; }
+    footer { background:#d8d8d8; color:#fff; padding:25px 10%; text-align:center; font-size:0.95rem; }
 
     /* No rounded corners anywhere (explicit) */
     * { border-radius:0 !important; }
+.footer-logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.footer-logo {
+  height: 40px;       /* Adjust size */
+  width: auto;
+  object-fit: contain;
+}
 
     /* Responsive */
     @media (max-width:900px) {
@@ -140,7 +234,7 @@
 
   <!-- Navbar -->
   <div class="navbar">
-    <div class="logo">COMPANY NAME</div>
+    <div class="logo">Business Services</div>
     <div class="nav-links">
       <a href="#home">HOME</a>
       <a href="#about">ABOUT</a>
@@ -150,12 +244,12 @@
     </div>
   </div>
 
-  <!-- HERO -->
+  <!-- HERO (structure identical to your original) -->
   <header id="home">
     <div class="hero-content">
-      <h1>Septic & Excavation Services</h1>
+      <h1>Professional Business Services</h1>
       <p>Call <strong>+1 000-000-0000</strong> to schedule a service, consultation, or project.</p>
-      <p class="offer">Lorem ipsum dolor sit amet — placeholder offer</p>
+      <p class="offer">Trusted, on-time, and transparent — tailored for your business needs.</p>
     </div>
 
     <div class="quote-form" aria-label="quote form">
@@ -178,26 +272,26 @@
 
   <!-- About -->
   <section class="about" id="about">
-    <img src="https://lancaster-septic.websitepro.hosting/wp-content/uploads/2020/06/unnamed-9.jpg" alt="Service truck image (placeholder)">
+    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80" alt="Business workspace">
     <div class="about-text">
       <h2>About Us</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
+      <p>We provide reliable business services across consulting, operations, logistics, and IT enablement. Our mission is to help you scale efficiently with quality you can measure.</p>
     </div>
   </section>
 
   <!-- Specialists -->
   <section class="specialists" id="specialists">
-    <img src="https://lancaster-septic.websitepro.hosting/wp-content/uploads/2020/07/spectic-14.jpg" alt="Excavation image (placeholder)">
+    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y29sbGFib3JhdGlvbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=500" alt="Team collaboration">
     <div class="specialists-text">
       <h2>Service Specialists</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.</p>
+      <p>Our experienced team blends domain knowledge with modern tools to deliver consistent results — for startups to enterprises.</p>
     </div>
   </section>
 
   <!-- Testimonials (image background) -->
   <section class="testimonial-section" aria-hidden="false">
     <h2>Customer Testimonials</h2>
-    <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.”<br><br><strong>– Reviewer A</strong></p>
+    <p>“Exceptional service and clear communication at every step. Highly recommended.”<br><br><strong>– Reviewer A</strong></p>
   </section>
 
   <!-- Reviews (same page) -->
@@ -208,30 +302,30 @@
       <div class="review-card" role="listitem">
         <div class="review-header">
           <div class="g-avatar" aria-hidden="true"></div>
-          <div class="reviewer-info"><strong>Reviewer 1</strong> reviewed COMPANY NAME on <a href="#">website.com</a></div>
+          <div class="reviewer-info"><strong>Reviewer 1</strong> reviewed COMPANY NAME on <a href="#">Google</a></div>
         </div>
         <div class="stars" aria-hidden="true">★★★★★</div>
-        <div class="review-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor.</div>
+        <div class="review-text">Professional and dependable. Great experience overall.</div>
         <div class="review-date">Jan 01, 20XX</div>
       </div>
 
       <div class="review-card" role="listitem">
         <div class="review-header">
           <div class="g-avatar" aria-hidden="true"></div>
-          <div class="reviewer-info"><strong>Reviewer 2</strong> reviewed COMPANY NAME on <a href="#">website.com</a></div>
+          <div class="reviewer-info"><strong>Reviewer 2</strong> reviewed COMPANY NAME on <a href="#">Google</a></div>
         </div>
         <div class="stars" aria-hidden="true">★★★★★</div>
-        <div class="review-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</div>
+        <div class="review-text">Fast response and excellent quality of service.</div>
         <div class="review-date">Feb 14, 20XX</div>
       </div>
 
       <div class="review-card" role="listitem">
         <div class="review-header">
           <div class="g-avatar" aria-hidden="true"></div>
-          <div class="reviewer-info"><strong>Reviewer 3</strong> reviewed COMPANY NAME on <a href="#">website.com</a></div>
+          <div class="reviewer-info"><strong>Reviewer 3</strong> reviewed COMPANY NAME on <a href="#">Google</a></div>
         </div>
         <div class="stars" aria-hidden="true">★★★★★</div>
-        <div class="review-text">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</div>
+        <div class="review-text">Highly skilled team with great attention to detail.</div>
         <div class="review-date">Mar 30, 20XX</div>
       </div>
     </div>
@@ -242,21 +336,21 @@
     <h2>Our Services</h2>
     <div class="footer-columns" aria-hidden="false">
       <div class="footer-column">
-        <h3>Septic Services</h3>
+        <h3>Business Services</h3>
         <ul>
-          <li>Lorem ipsum dolor sit</li>
-          <li>Site evaluation (placeholder)</li>
-          <li>Installation (placeholder)</li>
-          <li>Maintenance (placeholder)</li>
+          <li>Consulting & Strategy</li>
+          <li>Operations Management</li>
+          <li>Process Optimization</li>
+          <li>Staffing Solutions</li>
         </ul>
       </div>
       <div class="footer-column">
-        <h3>Excavation Services</h3>
+        <h3>Technology & Support</h3>
         <ul>
-          <li>Trucking (placeholder)</li>
-          <li>Stump removal (placeholder)</li>
-          <li>Sewer connections (placeholder)</li>
-          <li>Demo & snow (placeholder)</li>
+          <li>IT Integration</li>
+          <li>Logistics Coordination</li>
+          <li>Project Management</li>
+          <li>Support & Maintenance</li>
         </ul>
       </div>
     </div>
@@ -268,21 +362,28 @@
   </section>
 
   <!-- Get in touch block (below image) -->
-  <section class="get-in-touch" aria-label="contact details">
+ <section class="get-in-touch" aria-label="contact details">
+  <div>
     <h3>Get In Touch</h3>
-    <a href="#" aria-label="phone">+1 000-000-0000</a>
-    <a href="mailto:info@example.com" aria-label="email">info@example.com</a>
-    <p>1234 Lorem Ave, Ipsum, XX 00000</p>
-    <div class="social-icons" aria-hidden="false">
-      <a href="#" aria-label="facebook">F</a>
-      <a href="#" aria-label="google">G</a>
-    </div>
-  </section>
+    <a href="#">+1 978-368-8022</a>
+    <p>290 Neck Rd, Lancaster, MA 01523, US</p>
+  </div>
+<div class="social-icons">
+  <a href="#" aria-label="facebook">F</a>
+  <a href="#" aria-label="google">G</a>
+</div>
+
+</section>
+
 
   <!-- Footer (dummy) -->
   <footer>
-    <p>© 20XX COMPANY NAME. All Rights Reserved.</p>
-  </footer>
+  <div class="footer-logo-container">
+    <img src="https://lancaster-septic-v1761919655.websitepro-cdn.com/wp-content/uploads/2019/10/imedia-logo.png" alt="Company Logo" class="footer-logo">
+  </div>
+ 
+</footer>
+
 
 </body>
 </html>
